@@ -51,7 +51,9 @@ class Funcionario_model extends CI_Model {
         $this->session->set_flashdata('success', 'Funcionario Cadastrado Com Sucesso!');
 
         $this->db->insert('funcionario', ['id_pessoa' => $id_pessoa]);
+
         $id_funcionario = $this->db->insert_id();
+				$this->db->insert('cargo_funcionario', ['id_funcionario' => $id_funcionario,'id_cargo'=>$data['cargo']]);
 
         if($id_funcionario)
             $this->relatorio->setLog('insert', 'Inserir', 'Funcionario', $id_funcionario, 'Inseriu o funcionario', $id_funcionario);

@@ -122,7 +122,16 @@
                 <span class="invalid-feedback"></span>
               </div> <!-- FIM COMPLEMENTO -->
 
-
+              <div class="form-group col-12 col-md-6">
+                <label for="cargo">Cargo</label>
+                <select name="cargo" id="cargo" class="form-control">
+                  <option value="">Selecionar cargo</option>
+                  <?php foreach($cargos as $cargo): ?>
+                    <option value="<?php echo $cargo->id_cargo; ?>"><?php echo $cargo->nome; ?></option>
+                  <?php endforeach ?>
+                </select>
+                <span class="invalid-feedback"></span>
+              </div>
 
             </div>
 

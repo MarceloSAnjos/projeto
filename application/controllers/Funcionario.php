@@ -53,6 +53,9 @@ class Funcionario extends PR_Controller
 
         if($this->form_validation->run('funcionario'))
         {
+          echo "<pre>";
+          print_r($this->getFromPost());
+          return;
             $this->funcionario->insert($this->getFromPost());
 
             $this->redirectSuccess('Funcionário Cadastrado Com Sucesso!');
