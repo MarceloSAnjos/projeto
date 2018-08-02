@@ -233,7 +233,7 @@ class Funcionario_model extends CI_Model {
             'produtividade'   	 		 => $data['produtividade'],
             'relacaointerpessoal'    => $data['relacaointerpessoal'],
             'proatividade'   				 => $data['proatividade'],
-            'id_usuario'     				 => $this->session->userdata('user_login'))[0]->id_usuario,
+            'id_usuario'     				 => $this->session->userdata('user_login')[0]->id_usuario,
             'id_funcionario'     		 => $funcionario[0]->id_pessoa]);
 
         $this->session->set_flashdata('success', 'Avaliação cadastrada com sucesso!');
